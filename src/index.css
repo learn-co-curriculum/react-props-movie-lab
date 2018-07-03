@@ -8,7 +8,7 @@ body, html, #root {
 }
 
 #root {
-  background-image: url("./assets/cheap_diagonal_fabric.png");
+  background-image: url("./assets/patterns/cheap_diagonal_fabric.png");
 }
 
 #root, #movie-showcase {
@@ -63,7 +63,7 @@ body, html, #root {
 }
 
 .card-back {
-  background-image: url("./assets/cork-wallet.png");
+  background-image: url("./assets/patterns/cork-wallet.png");
   transform: rotateY(180deg);
   box-shadow: 5px 5px 10px rgb(55, 55, 55, 0.85);
   text-align: center;
@@ -82,7 +82,7 @@ span {
 }
 
 .zero {
-  background: url("./assets/stars.png") 0 0;
+  background: url("./assets/stars/stars.png") 0 0;
   width: 148px;
   height: 33px;
 }
