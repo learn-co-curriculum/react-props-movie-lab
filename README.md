@@ -37,7 +37,7 @@ associated with the movies we want to display. This data is located in
 
 `MovieCard` components (which showcase a single movie) receive their individual
 movie information from `MovieShowcase` as four props: `title`, `IMDBRating`,
-`genres`, and `posterURL`. Following, the props are passed again to either
+`genres`, and `poster`. Following, the props are passed again to either
 `CardFront` or `CardBack`.
 
 In our movie data set, we occasionally have missing data. This is where
@@ -57,7 +57,7 @@ the chain to the front and back components.
   - `title` receives an 'Unknown' string
   - `IMDBRating` simply gets assigned to false
   - `genres` should receive a value that will work with our `CardBack` component's rendering method for genres. The screen should read: 'No Genre(s) Found'
-  - `posterURL` should get the `defaultPoster`, which is already imported in `MovieCard`
+  - `poster` should get the string `default`
 2. pass the correct props to the correct back/front components
 (**Note:** the `posterMap` already takes care of converting a string into the appropriate poster asset)
 
@@ -69,8 +69,8 @@ style={{backgroundImage: `url(${prop})`}}
 
 ###### `CardBack`
 1. Finish writing the method `generateRatingElement`, which should do the following:
-  - if the rating prop is falsey, return an `<h4>` with the contents 'No Rating Found'
-  - otherwise, return `<img src={imgMapper[prop]} alt="" />` (with the correct prop)
+  - if the rating prop is null, return an `<h4>` with the contents 'No Rating Found'
+  - otherwise, return `<img src={imgMapper[prop]} alt="" />` (using the correct prop)
 2. render the genres (as comma separated) values
 3. render the title value
 

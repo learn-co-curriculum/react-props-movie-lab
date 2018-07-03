@@ -1,62 +1,59 @@
 const movieData = [
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'Choux and Maru go to Istanbul',
+    IMDBRating: 3,
+    genres: ['cats', 'adventure', 'romance'],
+    poster: 'choux-maru-istanbul'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'Choux and Maru',
+    IMDBRating: 4,
+    genres: ['cats', 'drama', 'romance'],
+    poster: 'choux-maru-part-1'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'ChromeBoi',
+    IMDBRating: 5,
+    genres: ['thriller', 'romance'],
+    poster: 'chromeboi'
   },
   
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'Escape from VIM',
+    IMDBRating: 0,
+    genres: ['an awful movie'],
+    poster: 'escape-from-vim'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'GoldenEye',
+    IMDBRating: 4,
+    genres: ['mystery', 'thriller', 'crime'],
+    poster: 'goldeneye'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
-  },
-  
-  
-  {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'Handsome Boy Modeling Club',
+    IMDBRating: 2,
+    genres: ['coming of age', 'romance'],
+    poster: 'handsome-boy'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: "Maru's Spinoff: Trapped in the Sheets",
+    IMDBRating: 5,
+    genres: ['Adventure'],
+    poster: 'marus-spinoff'
   },
   {
-    title: undefined,
-    IMDBRating: undefined,
-    genres: undefined,
-    posterURL: undefined
+    title: 'Terrance: King of the Rats',
+    IMDBRating: 1,
+    genres: ['drama'],
+    poster: 'terrance-king'
   },
-  
+  {
+    title: 'The Trash Man',
+    IMDBRating: 5,
+    genres: ['crime', 'period piece'],
+    poster: 'the-trash-man'
+  },
 ]
 
 export default movieData

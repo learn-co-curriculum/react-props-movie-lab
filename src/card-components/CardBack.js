@@ -11,7 +11,7 @@ const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 export default class CardBack extends Component {
 
   generateRatingElement = () => {
-    if (this.props.IMDBRating) {
+    if (this.props.IMDBRating !== null) {
       return (<img src={imgMapper[this.props.IMDBRating]} alt="" />)
     }
     return (<h4>No Rating Found</h4>)
