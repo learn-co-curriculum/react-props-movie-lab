@@ -68,13 +68,11 @@ style={{backgroundImage: `url(${prop})`}}
 ```
 
 ###### `CardBack`
-1. Finish writing the method `generateRatingElement`, which should do the following:
-  - if the rating prop is null, return an `<h4>` with the contents 'No Rating Found'
+1. render the genres (as comma separated) strings
+2. render the title value
+3. Finish writing the method `generateRatingElement`, which should do the following:
+  - if the IMDBRating prop is null, return an `<h4>` with the contents 'No Rating Found'
   - otherwise, return `<img src={imgMapper[prop]} alt="" />` (using the correct prop)
-2. render the genres (as comma separated) values
-3. render the title value
-
-
 
 
 ## Resources
