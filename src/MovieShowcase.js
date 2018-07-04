@@ -7,15 +7,7 @@ export default class MovieShowcase extends Component {
 		return movieData.map((data, idx) => <MovieCard key={idx} {...data} />);
 	};
 
-  generateMovieCards = () => {
-    return movieData.map((data, idx) => <MovieCard key={idx} {...data} />)
-  }
-
-  render() {
-    return (
-      <div id="movie-showcase">
-        {this.generateMovieCards()}
-      </div>
-    )
-  }
+	render() {
+		return <div id="movie-showcase">{this.generateMovieCards()}</div>;
+	}
 }
