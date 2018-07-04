@@ -55,7 +55,7 @@ the chain to the front and back components.
 ###### `MovieCard`
 1. `defaultProps` should be assigned in `MovieCard` for all four of the props:
   - `title` receives an 'Unknown' string
-  - `IMDBRating` simply gets assigned to false
+  - `IMDBRating` simply gets assigned to null
   - `genres` should receive a value that will work with our `CardBack` component's rendering method for genres. The screen should read: 'No Genre(s) Found'
   - `poster` should get the string `default`
 2. pass the correct props to the correct back/front components
