@@ -26,6 +26,7 @@ describe('<MovieShowcase />', () => {
   })
   
   it('passes all 4 props to every component', () => {
+    expect(cards.exists()).to.equal(true)
     cards.forEach(card => {
       expect(card.props().title).to.exist
       expect(card.props().IMDBRating).to.exist
