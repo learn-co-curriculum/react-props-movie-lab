@@ -75,6 +75,11 @@ style={{backgroundImage: `url(${prop})`}}
   - otherwise, return `<img src={imgMapper[prop]} alt="" />` (using the correct prop)
 
 
+#### Once Finished
+
+`npm start` and make sure everything is functioning how you would like!
+
+
 ## Resources
 - [React Default Prop Values](https://reactjs.org/docs/components-and-props.html#default-prop-values)
 
