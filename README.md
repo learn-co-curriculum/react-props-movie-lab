@@ -75,6 +75,8 @@ style={{backgroundImage: `url(${prop})`}}
 3. render the title value
 
 
+
+
 ## Resources
 - [React Default Prop Values](https://reactjs.org/docs/components-and-props.html#default-prop-values)
 
