@@ -49,7 +49,7 @@ the chain to the front and back components.
 ## Deliverables
 
 ###### `MovieShowcase`
-1. `.map` over the imported movie data array and render `MovieCard`s for each element. (see [documentaion)][lists-and-keys]
+1. `.map` over the imported movie data array and render `MovieCard`s for each element. (see [documentation)][lists-and-keys]
 2. Don't forget to pass _all 4_ props
 
 ###### `MovieCard`
