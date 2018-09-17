@@ -2,12 +2,19 @@
   "name": "react-props-movie-lab",
   "version": "0.1.0",
   "private": true,
-  "babel": {"presets": ["airbnb", "env", "stage-0", "react" ]},
+  "babel": {
+    "presets": [
+      "airbnb",
+      "env",
+      "stage-0",
+      "react"
+    ]
+  },
   "dependencies": {
     "mocha-multi": "^1.0.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^1.1.5",
     "webpack": "^3.11.0"
   },
   "scripts": {
