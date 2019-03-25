@@ -85,7 +85,7 @@ style={{backgroundImage: `url(${prop})`}}
 
 ## Resources
 
-- [React Default Prop Values](https://reactjs.org/docs/components-and-props.html#default-prop-values)
+- [React Default Prop Values](https://reactjs.org/docs/react-component.html#defaultprops)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-props-movie-lab'>Props Lab</a> on Learn.co and start learning to code for free.</p>
 
