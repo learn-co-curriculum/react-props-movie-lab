@@ -219,6 +219,11 @@ For `IMDBRating`, you will need to finish writing the method
 - otherwise, return `<img src={imgMapper[prop]} alt="" />` (using the correct
   prop)
 
+Just like the posters in `MovieCard`, we've provided image assets and an object, `imgMapper`,
+that includes the right images. The values of `imgMapper` can be passed directly in as
+the `src` attribute on an `img` element, but you must use the `IMDBRating` prop as the key
+to access these values.
+
 #### Once Finished
 
 Check out the application and make sure everything is functioning how you would like!
