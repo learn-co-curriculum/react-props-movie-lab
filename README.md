@@ -144,7 +144,7 @@ class App extends React.Component {
 
 export default App;
 ```
-Let's see another example. Suppose you have a component called `List` instead of an li.
+Let's see another example. Suppose you have a component called `List` instead of an `li`.
 We can also map through an array of data and return an array of JSX to dynamically create
 our `List` components. We can even pass the strings `Hello` and `Goodbye` as props:
 
