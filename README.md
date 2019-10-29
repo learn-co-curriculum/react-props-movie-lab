@@ -144,6 +144,54 @@ class App extends React.Component {
 
 export default App;
 ```
+Let's see another example. Suppose you have a component called `List` instead of an li.
+We can also map through an array of data and return an array of JSX to dynamically create
+our `List` components. We can even pass the strings `Hello` and `Goodbye` as props:
+
+```js
+
+class List extends React.Component{
+  render(){
+    return <li>{this.props.content}</li>
+  }
+}
+
+const LIST = ["Hello", "Goodbye"]
+
+class App extends React.Component {
+  generateInnerJSX = () => {
+    return LIST.map(item => <List content={item}/>)
+  }
+
+  render() {
+    return (
+      <div>
+        {this.generateInnerJSX()}
+      </div>
+    )
+  }
+}
+```
+
+The above code is the same as below:
+
+```js
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {[
+          <List content={"Hello"} />,
+          <List content={"Goodbye"} />
+        ]}
+      </div>
+    )
+  }
+}
+
+```
+
+We are dynamically generating an _array_ of JSX to render inside our `<div>` tag.
 
 You can do the same with `movieData`: map over the data, passing in values from
 each object as props. See the [documentation here][lists-and-keys] for
