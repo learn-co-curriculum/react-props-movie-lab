@@ -7,8 +7,8 @@
 ## Introduction
 
 This is a bare-bones React application used to showcase the nine greatest movies
-of all time. Your job is to update it so that it passes props from parent to
-children components correctly. In addition, you will implement default props so
+of all time. Our job is to update it so that it passes props from the parent to
+children components correctly. In addition, we will implement default props so
 that 'bad/missing data' is properly handled - preventing our user interface from
 blowing up our visitors' computers
 
@@ -26,7 +26,8 @@ associated with the movies we want to display. This data is located in
 `src/data.js` and is already being imported.
 
 `MovieCard` components (which showcase a single movie) receive their individual
-movie information from `MovieShowcase` as two props: `title` and `genres`. Following, the props are passed again to `CardFront`.
+movie information from `MovieShowcase` as two props: `title` and `genres`.
+Following that, the props are passed again to `CardFront`.
 
 In our movie data set, we occasionally have missing data. This is where
 `defaultProps` come in and really pull our buns out of the fire. We will be
@@ -48,101 +49,39 @@ import movieData from './data.js'
 
 The `MovieShowcase` component, then, has access to `movieData`. We want to take this
 data and, for every object inside, render a `MovieCard` component, passing the object
-data in as props. Don't forget to pass _all 4_ props
-
-**Hint**: In JSX, it is possible to include JavaScript code and calls to
-functions. A function called in JSX must be wrapped in curly braces and must
-return a single JSX element. That single JSX element, however, can contain other
-elements. So, for instance, the component below renders valid JSX:
+data in as props like so:
 
 ```js
-import React from 'react';
-
-class App extends React.Component {
-
-  generateInnerJSX = () => {
-    return (
-      <ul>
-        <li>Hello</li>
-        <li>Goodbye</li>
-      </ul>
-    )
-  }
-  render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
-  }
-}
-
-export default App;
+generateMovieCards = () => {
+	return movieData.map((movie, index) => <MovieCard
+		    key={index}
+		    title={movie.title}
+		    genres={movie.genres}
+		  />)
+	};
 ```
 
-There is an important exception to this: it is possible to return multiple JSX
-elements in an _array_. So instead of having to wrap the `li` elements above in
-a `ul` element, we could write:
+In JSX, it is possible to include JavaScript code and calls to functions. A function
+called in JSX must be wrapped in curly braces and must return either a single JSX element,
+or an array that contains multiple JSX elements. A single JSX element, however, can contain
+other elements.
+
+This is what we are doing with `movieData`: mapping over the data and passing in values from
+each object as props. See the [documentation here][lists-and-keys] for additional information.
+
+Once we have our function that generates an array of MovieCard components we need to
+invoke that function in our render function as mentioned above:
 
 ```js
-import React from 'react';
-
-class App extends React.Component {
-
-  generateInnerJSX = () => {
-    return [
-      <li>Hello</li>,
-      <li>Goodbye</li>
-    ]
-  }
-
-  render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
-  }
+render() {
+	return <div id="movie-showcase">{this.generateMovieCards()}</div>;
 }
-
-export default App;
 ```
-
-More importantly, because we can return arrays, we can use `.map` to map over
-data and return an array of elements. The code below will render two `li`
-elements just like the previous example, but this time using data from an array:
-
-```js
-import React from 'react';
-
-const LIST = ["Hello", "Goodbye"]
-
-class App extends React.Component {
-
-  generateInnerJSX = () => {
-    return LIST.map(item => <li>{item}<li>)
-  }
-
-  render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
-  }
-}
-
-export default App;
-```
-
-You can do the same with `movieData`: map over the data, passing in values from
-each object as props. See the [documentation here][lists-and-keys] for
-additional information.
 
 ###### `MovieCard`
 
 If everything is set up properly in `MovieShowcase`, running the application
-will produce a page with 9 empty squares popping out. These are the nine
+will produce a page with 9 empty squares on the page. These are the nine
 `MovieCard` components being rendered in `MovieShowcase` and if you click one and
 hold your mouse button down, you'll see the card animate and 'turn over.'
 
