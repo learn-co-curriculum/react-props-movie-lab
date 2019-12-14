@@ -76,7 +76,7 @@ invoke that function in our render function as mentioned above:
 
 ```js
 render() {
-	return <div id="movie-showcase">{this.generateMovieCards()}</div>;
+  return <div id="movie-showcase">{this.generateMovieCards()}</div>;
 }
 ```
 
@@ -96,14 +96,14 @@ props. Our next task here is to pass props to the child component of `MovieCard`
 
 ```js
 render() {
-	return (
-		<div className="movie-card">
-			<CardFront
-				title={this.props.title}
-				genres={this.props.genres}
-			/>
-		</div>
-	);
+  return (
+    <div className="movie-card">
+      <CardFront
+        title={this.props.title}
+        genres={this.props.genres}
+      />
+    </div>
+  );
 }
 ```
 
@@ -125,8 +125,8 @@ Lets write `defaultProps` like this:
 
 ```js
 MovieCard.defaultProps = {
-	title: 'Unknown',
-	genres: ['No Genre(s) Found'],
+  title: 'Unknown',
+  genres: ['No Genre(s) Found'],
 };
 ```
 
@@ -141,12 +141,12 @@ separated by commas. Lets take a look at how to do that:
 
 ```js
 render() {
-	return (
-		<div className="card">
-			<h3 className="title">Title: {this.props.title}</h3>
-			<h5 className="genres">Genre(s): {this.props.genres.join(', ')}</h5>
-		</div>
-	);
+  return (
+    <div className="card">
+      <h3 className="title">Title: {this.props.title}</h3>
+      <h5 className="genres">Genre(s): {this.props.genres.join(', ')}</h5>
+    </div>
+  );
 }
 ```
 
