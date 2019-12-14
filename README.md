@@ -82,76 +82,71 @@ render() {
 
 If everything is set up properly in `MovieShowcase`, running the application
 will produce a page with 9 empty squares on the page. These are the nine
-`MovieCard` components being rendered in `MovieShowcase` and if you click one and
-hold your mouse button down, you'll see the card animate and 'turn over.'
+`MovieCard` components being rendered in `MovieShowcase`.
 
 If we were to place `console.log(this.props)` in the `MovieCard` component at
 the beginning of `render()`, we'd see that each `MovieCard` contains different
-props. Your task here is to pass props to the two child components of
-`MovieCard`, `CardFront` and `CardBack`.
+props. Our next task here is to pass props to the child component of `MovieCard`,
+`CardFront`.
 
-`CardBack` will display the title, genres and IMDB rating. `CardFront` will only
-be used to display the movie poster. `CardFront` should receive a `poster`
-prop, while `CardBack` should receive `title`, `genre`, and `IMDBRating` props.
+`CardFront` will display the title and genres and therefore it should receive the
+`title` and `genre` props. Lets take a look at how this works in action:
 
-Thinking about the structure of this application, `CardFront` and `CardBack`
-have specific tasks - to display the data they receive as props. `MovieShowcase`
-is where this data is imported in. What is the purpose of `MovieCard` then?
+```js
+render() {
+		return (
+			<div className="movie-card">
+				<CardFront
+					title={this.props.title}
+					genres={this.props.genres}
+				/>
+			</div>
+		);
+	}
+```
+
+Thinking about the structure of this application, `CardFront` has a specific
+task - to display the data it receives as props. `MovieShowcase` is where
+this data is imported in. What is the purpose of `MovieCard` then?
 
 In this case, `MovieCard` acts as a sort of container. It does render a `div`
 element with a CSS class, but besides that, its primary purpose is to house
-the `CardFront` and `CardBack` components.
+the `CardFront` component.
 
-**Note**: The poster info you received from `movieData` is only a hyphenated
-version of the movie title. All the poster image assets you need are imported into
-`MovieCard` already, but you must figure out a way get the right poster based
-on the props from `MovieShowcase` and pass it down to `CardFront`.
+Besides containing `CardFront`, the `MovieCard` component can also be used to
+make sure that the data being passed down to `CardFront` is complete. For this,
+we can use default props. Default props allow us to set a default value in the
+event that a prop is not provided. By doing this in `MovieCard`, we can ensure
+that the props passed down to `CardFront` are consistent.
 
-Besides containing `CardFront` and `CardBack`, the `MovieCard` component can
-also be used to make sure that the data being passed down to `CardFront` and
-`CardBack` is complete. For this, we can use default props. Default props allow
-us to set a default value in the event that a prop is not provided. By doing
-this in `MovieCard`, we can ensure that the props passed down to `CardFront` and
-`CardBack` are consistent.
+Lets write `defaultProps` like this:
 
-Write `defaultProps` for the following:
-
-- `title` should default to `"Unknown"`
-- `IMDBRating` should default to `null`
-- `genres` should receive a value that will work with our `CardBack` component's
-  rendering method for genres. The screen should read: `'No Genre(s) Found'`
-- `poster` should get the string `"default"`
+```js
+MovieCard.defaultProps = {
+	title: 'Unknown',
+	genres: ['No Genre(s) Found'],
+};
+```
 
 Review the previous Props readme for an example on default props, and/or take a
 look at the [documentation][default props] for additional guidance.
 
 ###### `CardFront`
 
-This component should have one prop, which should be used to apply a background
-image. This can be done inline via:
+In this component, we need to render the `title`, `genres`. Remember that `genres`
+is an array of multiple genres so we will have to join them into a single string
+separated by commas. Lets take a look at how to do that:
 
 ```js
-style={{backgroundImage: `url(${prop})`}}
+render() {
+		return (
+			<div className="card">
+				<h3 className="title">Title: {this.props.title}</h3>
+				<h5 className="genres">Genre(s): {this.props.genres.join(', ')}</h5>
+			</div>
+		);
+	}
 ```
-
-###### `CardBack`
-
-In this component, you will need to render the `title`, `genres` and
-`IMDBRating`.
-
-For `genres`, join each genre together into string with commas separating each.
-
-For `IMDBRating`, you will need to finish writing the method
-`generateRatingElement()`, which should do the following:
-
-- if the `IMDBRating` prop is `null`, return an `<h4>` with the contents `'No Rating Found'`
-- otherwise, return `<img src={imgMapper[prop]} alt="" />` (using the correct
-  prop)
-
-Just like the posters in `MovieCard`, we've provided image assets and an object, `imgMapper`,
-that includes the right images. The values of `imgMapper` can be passed directly in as
-the `src` attribute on an `img` element, but you must use the `IMDBRating` prop as the key
-to access these values.
 
 #### Once Finished
 
