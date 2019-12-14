@@ -53,12 +53,12 @@ data in as props like so:
 
 ```js
 generateMovieCards = () => {
-	return movieData.map((movie, index) =>
+  return movieData.map((movie, index) =>
     <MovieCard
-		  key={index}
-		  title={movie.title}
-		  genres={movie.genres}
-		/>
+      key={index}
+      title={movie.title}
+      genres={movie.genres}
+    />
   )
 };
 ```
