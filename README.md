@@ -55,7 +55,7 @@ data in as props like so:
 generateMovieCards = () => {
   return movieData.map((movie, index) =>
     <MovieCard
-      key={index}
+      key={index} // Unique key required by React when returning an array of JSX elements
       title={movie.title}
       genres={movie.genres}
     />
