@@ -1,10 +1,8 @@
-# React Props Movie Lab
+# React Simple Props Movie Lab
 
 ## Objectives
 
 - Practice passing props from parent components to children
-- Practice using default props
-- Practice jumping into and improving existing code
 
 ## Introduction
 
@@ -19,14 +17,8 @@ Following is the component tree. When fully rendered, there are **9**
 
 ```text
 └── MovieShowcase
-    │
-    ├── MovieCard
-    │   ├── CardFront
-    │   └── CardBack
-    │
-    └── MovieCard
-        ├── CardFront
-        └── CardBack
+    └─ MovieCard
+       └─ CardFront
 ```
 
 `MovieShowcase` is the component that will house all of the 'raw' data
@@ -34,14 +26,12 @@ associated with the movies we want to display. This data is located in
 `src/data.js` and is already being imported.
 
 `MovieCard` components (which showcase a single movie) receive their individual
-movie information from `MovieShowcase` as four props: `title`, `IMDBRating`,
-`genres`, and `poster`. Following, the props are passed again to either
-`CardFront` or `CardBack`.
+movie information from `MovieShowcase` as two props: `title` and `genres`. Following, the props are passed again to `CardFront`.
 
 In our movie data set, we occasionally have missing data. This is where
 `defaultProps` come in and really pull our buns out of the fire. We will be
 handling all of our `defaultProp`'ing in `MovieCard` before they are passed down
-the chain to the front and back components.
+the chain to the front component.
 
 ## Deliverables
 
@@ -144,54 +134,6 @@ class App extends React.Component {
 
 export default App;
 ```
-Let's see another example. Suppose you have a component called `List` instead of an `li`.
-We can also map through an array of data and return an array of JSX to dynamically create
-our `List` components. We can even pass the strings `Hello` and `Goodbye` as props:
-
-```js
-
-class List extends React.Component{
-  render(){
-    return <li>{this.props.content}</li>
-  }
-}
-
-const LIST = ["Hello", "Goodbye"]
-
-class App extends React.Component {
-  generateInnerJSX = () => {
-    return LIST.map(item => <List content={item}/>)
-  }
-
-  render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
-  }
-}
-```
-
-The above code is the same as below:
-
-```js
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        {[
-          <List content={"Hello"} />,
-          <List content={"Goodbye"} />
-        ]}
-      </div>
-    )
-  }
-}
-
-```
-
-We are dynamically generating an _array_ of JSX to render inside our `<div>` tag.
 
 You can do the same with `movieData`: map over the data, passing in values from
 each object as props. See the [documentation here][lists-and-keys] for
@@ -202,12 +144,12 @@ additional information.
 If everything is set up properly in `MovieShowcase`, running the application
 will produce a page with 9 empty squares popping out. These are the nine
 `MovieCard` components being rendered in `MovieShowcase` and if you click one and
-hold your mouse button down, you'll see the card animate and 'turn over.' 
+hold your mouse button down, you'll see the card animate and 'turn over.'
 
 If we were to place `console.log(this.props)` in the `MovieCard` component at
 the beginning of `render()`, we'd see that each `MovieCard` contains different
 props. Your task here is to pass props to the two child components of
-`MovieCard`, `CardFront` and `CardBack`. 
+`MovieCard`, `CardFront` and `CardBack`.
 
 `CardBack` will display the title, genres and IMDB rating. `CardFront` will only
 be used to display the movie poster. `CardFront` should receive a `poster`
@@ -256,7 +198,7 @@ style={{backgroundImage: `url(${prop})`}}
 ###### `CardBack`
 
 In this component, you will need to render the `title`, `genres` and
-`IMDBRating`. 
+`IMDBRating`.
 
 For `genres`, join each genre together into string with commas separating each.
 
