@@ -53,12 +53,14 @@ data in as props like so:
 
 ```js
 generateMovieCards = () => {
-	return movieData.map((movie, index) => <MovieCard
-		    key={index}
-		    title={movie.title}
-		    genres={movie.genres}
-		  />)
-	};
+	return movieData.map((movie, index) =>
+    <MovieCard
+		  key={index}
+		  title={movie.title}
+		  genres={movie.genres}
+		/>
+  )
+};
 ```
 
 In JSX, it is possible to include JavaScript code and calls to functions. A function
@@ -94,15 +96,15 @@ props. Our next task here is to pass props to the child component of `MovieCard`
 
 ```js
 render() {
-		return (
-			<div className="movie-card">
-				<CardFront
-					title={this.props.title}
-					genres={this.props.genres}
-				/>
-			</div>
-		);
-	}
+	return (
+		<div className="movie-card">
+			<CardFront
+				title={this.props.title}
+				genres={this.props.genres}
+			/>
+		</div>
+	);
+}
 ```
 
 Thinking about the structure of this application, `CardFront` has a specific
@@ -139,13 +141,13 @@ separated by commas. Lets take a look at how to do that:
 
 ```js
 render() {
-		return (
-			<div className="card">
-				<h3 className="title">Title: {this.props.title}</h3>
-				<h5 className="genres">Genre(s): {this.props.genres.join(', ')}</h5>
-			</div>
-		);
-	}
+	return (
+		<div className="card">
+			<h3 className="title">Title: {this.props.title}</h3>
+			<h5 className="genres">Genre(s): {this.props.genres.join(', ')}</h5>
+		</div>
+	);
+}
 ```
 
 #### Once Finished
