@@ -137,7 +137,7 @@ look at the [documentation][default props] for additional guidance.
 
 In this component, we need to render the `title` and `genres`. Remember that `genres`
 is an array of multiple genres so we will have to join them into a single string,
-separated by commas. Lets take a look at how we can do that:
+separated by commas. Lets take a look at how we can do that in our render function:
 
 ```js
 render() {
@@ -153,6 +153,8 @@ render() {
 #### Once Finished
 
 Check out the application and make sure everything is functioning how you expect it to!
+You can do this by running `npm install` and then start the react server with `npm start`.
+Be sure to make sure you are passing your tests before moving on!
 
 ## Resources
 
