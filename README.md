@@ -30,9 +30,9 @@ movie information from `MovieShowcase` as two props: `title` and `genres`.
 Following that, the props are passed again to `CardFront`.
 
 In our movie data set, we occasionally have missing data. This is where
-`defaultProps` come in and really pull our buns out of the fire. We will be
-handling all of our `defaultProp`'ing in `MovieCard` before they are passed down
-the chain to the front component.
+`defaultProps` come in and save us some grief. We will be handling the creation
+of our `defaultProps` in `MovieCard` before they are passed down
+the chain to the `CardFront` component.
 
 ## Deliverables
 
@@ -40,16 +40,16 @@ the chain to the front component.
 
 To get started, take a look at `src/data.js` to get a sense of the data you'll
 be working with. We can see that the data is stored in an array of objects. At
-the end of this file, the data is set up to be exported and in
-`src/MovieShowcase.js`, we can see that this data gets imported in at the top:
+the end of this file, the data is exported. In `src/MovieShowcase.js`, we can
+see that this data gets imported at the top:
 
 ```js
 import movieData from './data.js'
 ```
 
-The `MovieShowcase` component, then, has access to `movieData`. We want to take this
-data and, for every object inside, render a `MovieCard` component, passing the object
-data in as props like so:
+The `MovieShowcase` component now has access to our data in the `movieData` variable.
+We want to take this data and, for every object inside, render a `MovieCard` component,
+passing the object data in as props like so:
 
 ```js
 generateMovieCards = () => {
@@ -91,8 +91,8 @@ the beginning of `render()`, we'd see that each `MovieCard` contains different
 props. Our next task here is to pass props to the child component of `MovieCard`,
 `CardFront`.
 
-`CardFront` will display the title and genres and therefore it should receive the
-`title` and `genre` props. Lets take a look at how this works in action:
+`CardFront` will display the title and genres. Therefore it needs to receive the
+`title` and `genre` props. Lets take a look at how this works:
 
 ```js
 render() {
@@ -109,15 +109,15 @@ render() {
 
 Thinking about the structure of this application, `CardFront` has a specific
 task - to display the data it receives as props. `MovieShowcase` is where
-this data is imported in. What is the purpose of `MovieCard` then?
+this data is imported. So, what is the purpose of `MovieCard`?
 
 In this case, `MovieCard` acts as a sort of container. It does render a `div`
-element with a CSS class, but besides that, its primary purpose is to house
+element with a CSS class, but aside from that, its primary purpose is to house
 the `CardFront` component.
 
-Besides containing `CardFront`, the `MovieCard` component can also be used to
+In addition to containing `CardFront`, the `MovieCard` component can also be used to
 make sure that the data being passed down to `CardFront` is complete. For this,
-we can use default props. Default props allow us to set a default value in the
+we use default props. Default props allow us to set a default value in the
 event that a prop is not provided. By doing this in `MovieCard`, we can ensure
 that the props passed down to `CardFront` are consistent.
 
@@ -135,9 +135,9 @@ look at the [documentation][default props] for additional guidance.
 
 ###### `CardFront`
 
-In this component, we need to render the `title`, `genres`. Remember that `genres`
-is an array of multiple genres so we will have to join them into a single string
-separated by commas. Lets take a look at how to do that:
+In this component, we need to render the `title` and `genres`. Remember that `genres`
+is an array of multiple genres so we will have to join them into a single string,
+separated by commas. Lets take a look at how we can do that:
 
 ```js
 render() {
@@ -152,7 +152,7 @@ render() {
 
 #### Once Finished
 
-Check out the application and make sure everything is functioning how you would like!
+Check out the application and make sure everything is functioning how you expect it to!
 
 ## Resources
 
