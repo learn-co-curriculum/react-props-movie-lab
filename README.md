@@ -280,5 +280,6 @@ Check out the application and make sure everything is functioning how you would 
 
 - [React Default Prop Values][default props]
 
+
 [default props]: https://reactjs.org/docs/react-component.html#defaultprops
 [lists-and-keys]: https://reactjs.org/docs/lists-and-keys.html
