@@ -45,15 +45,15 @@ the chain to the front and back components.
 
 ## Deliverables
 
-###### `MovieShowcase`
+### `MovieShowcase`
 
 To get started, take a look at `src/data.js` to get a sense of the data you'll
 be working with. We can see that the data is stored in an array of objects. At
 the end of this file, the data is set up to be exported and in
 `src/MovieShowcase.js`, we can see that this data gets imported in at the top:
 
-```js
-import movieData from './data.js'
+```jsx
+import movieData from "./data.js";
 ```
 
 The `MovieShowcase` component, then, has access to `movieData`. We want to take this
@@ -65,25 +65,20 @@ functions. A function called in JSX must be wrapped in curly braces and must
 return a single JSX element. That single JSX element, however, can contain other
 elements. So, for instance, the component below renders valid JSX:
 
-```js
-import React from 'react';
+```jsx
+import React from "react";
 
 class App extends React.Component {
-
   generateInnerJSX = () => {
     return (
       <ul>
         <li>Hello</li>
         <li>Goodbye</li>
       </ul>
-    )
-  }
+    );
+  };
   render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
+    return <div>{this.generateInnerJSX()}</div>;
   }
 }
 
@@ -94,24 +89,16 @@ There is an important exception to this: it is possible to return multiple JSX
 elements in an _array_. So instead of having to wrap the `li` elements above in
 a `ul` element, we could write:
 
-```js
-import React from 'react';
+```jsx
+import React from "react";
 
 class App extends React.Component {
-
   generateInnerJSX = () => {
-    return [
-      <li>Hello</li>,
-      <li>Goodbye</li>
-    ]
-  }
+    return [<li>Hello</li>, <li>Goodbye</li>];
+  };
 
   render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
+    return <div>{this.generateInnerJSX()}</div>;
   }
 }
 
@@ -122,7 +109,7 @@ More importantly, because we can return arrays, we can use `.map` to map over
 data and return an array of elements. The code below will render two `li`
 elements just like the previous example, but this time using data from an array:
 
-```js
+```jsx
 import React from 'react';
 
 const LIST = ["Hello", "Goodbye"]
@@ -144,51 +131,41 @@ class App extends React.Component {
 
 export default App;
 ```
+
 Let's see another example. Suppose you have a component called `List` instead of an `li`.
 We can also map through an array of data and return an array of JSX to dynamically create
 our `List` components. We can even pass the strings `Hello` and `Goodbye` as props:
 
-```js
-
-class List extends React.Component{
-  render(){
-    return <li>{this.props.content}</li>
+```jsx
+class List extends React.Component {
+  render() {
+    return <li>{this.props.content}</li>;
   }
 }
 
-const LIST = ["Hello", "Goodbye"]
+const LIST = ["Hello", "Goodbye"];
 
 class App extends React.Component {
   generateInnerJSX = () => {
-    return LIST.map(item => <List content={item}/>)
-  }
+    return LIST.map((item) => <List content={item} />);
+  };
 
   render() {
-    return (
-      <div>
-        {this.generateInnerJSX()}
-      </div>
-    )
+    return <div>{this.generateInnerJSX()}</div>;
   }
 }
 ```
 
 The above code is the same as below:
 
-```js
+```jsx
 class App extends React.Component {
   render() {
     return (
-      <div>
-        {[
-          <List content={"Hello"} />,
-          <List content={"Goodbye"} />
-        ]}
-      </div>
-    )
+      <div>{[<List content={"Hello"} />, <List content={"Goodbye"} />]}</div>
+    );
   }
 }
-
 ```
 
 We are dynamically generating an _array_ of JSX to render inside our `<div>` tag.
@@ -197,17 +174,17 @@ You can do the same with `movieData`: map over the data, passing in values from
 each object as props. See the [documentation here][lists-and-keys] for
 additional information.
 
-###### `MovieCard`
+### `MovieCard`
 
 If everything is set up properly in `MovieShowcase`, running the application
 will produce a page with 9 empty squares popping out. These are the nine
 `MovieCard` components being rendered in `MovieShowcase` and if you click one and
-hold your mouse button down, you'll see the card animate and 'turn over.' 
+hold your mouse button down, you'll see the card animate and 'turn over.'
 
 If we were to place `console.log(this.props)` in the `MovieCard` component at
 the beginning of `render()`, we'd see that each `MovieCard` contains different
 props. Your task here is to pass props to the two child components of
-`MovieCard`, `CardFront` and `CardBack`. 
+`MovieCard`, `CardFront` and `CardBack`.
 
 `CardBack` will display the title, genres and IMDB rating. `CardFront` will only
 be used to display the movie poster. `CardFront` should receive a `poster`
@@ -244,19 +221,19 @@ Write `defaultProps` for the following:
 Review the previous Props readme for an example on default props, and/or take a
 look at the [documentation][default props] for additional guidance.
 
-###### `CardFront`
+### `CardFront`
 
 This component should have one prop, which should be used to apply a background
 image. This can be done inline via:
 
-```js
+```jsx
 style={{backgroundImage: `url(${prop})`}}
 ```
 
-###### `CardBack`
+### `CardBack`
 
 In this component, you will need to render the `title`, `genres` and
-`IMDBRating`. 
+`IMDBRating`.
 
 For `genres`, join each genre together into string with commas separating each.
 
@@ -272,7 +249,7 @@ that includes the right images. The values of `imgMapper` can be passed directly
 the `src` attribute on an `img` element, but you must use the `IMDBRating` prop as the key
 to access these values.
 
-#### Once Finished
+### Once Finished
 
 Check out the application and make sure everything is functioning how you would like!
 
