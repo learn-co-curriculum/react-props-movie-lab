@@ -1,0 +1,214 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 14,
+    "passes": 14,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-12-18T22:46:48.601Z",
+    "end": "2021-12-18T22:46:48.757Z",
+    "duration": 156
+  },
+  "tests": [
+    {
+      "title": "renders at least one <MovieCard /> component",
+      "fullTitle": "<MovieShowcase /> renders at least one <MovieCard /> component",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders 9 <MovieCard /> components",
+      "fullTitle": "<MovieShowcase /> renders 9 <MovieCard /> components",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "passes all 4 props to every component",
+      "fullTitle": "<MovieShowcase /> passes all 4 props to every component",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "has generated the correct prop values for the first movie",
+      "fullTitle": "<MovieShowcase /> has generated the correct prop values for the first movie",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "has generated the correct prop values for the last movie",
+      "fullTitle": "<MovieShowcase /> has generated the correct prop values for the last movie",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of 'Unknown' for the title prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of 'Unknown' for the title prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of null for the IMDBRating prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of null for the IMDBRating prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of ['No Genre(s) Found'] for the genres prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of ['No Genre(s) Found'] for the genres prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of 'default' for the poster prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of 'default' for the poster prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "uses the poster prop as a background image, rendering only the necessary HTML",
+      "fullTitle": "<CardFront /> uses the poster prop as a background image, rendering only the necessary HTML",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "correctly renders the title prop",
+      "fullTitle": "<CardBack /> correctly renders the title prop",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "correctly renders the genres prop as comma seperated strings",
+      "fullTitle": "<CardBack /> correctly renders the genres prop as comma seperated strings",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders 'No Rating Found' in an <h4> if the IMDBRating prop is null",
+      "fullTitle": "<CardBack /> renders 'No Rating Found' in an <h4> if the IMDBRating prop is null",
+      "duration": 20,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders an <img> tag if the IMDBRating prop is valid",
+      "fullTitle": "<CardBack /> renders an <img> tag if the IMDBRating prop is valid",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "renders at least one <MovieCard /> component",
+      "fullTitle": "<MovieShowcase /> renders at least one <MovieCard /> component",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders 9 <MovieCard /> components",
+      "fullTitle": "<MovieShowcase /> renders 9 <MovieCard /> components",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "passes all 4 props to every component",
+      "fullTitle": "<MovieShowcase /> passes all 4 props to every component",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "has generated the correct prop values for the first movie",
+      "fullTitle": "<MovieShowcase /> has generated the correct prop values for the first movie",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "has generated the correct prop values for the last movie",
+      "fullTitle": "<MovieShowcase /> has generated the correct prop values for the last movie",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of 'Unknown' for the title prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of 'Unknown' for the title prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of null for the IMDBRating prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of null for the IMDBRating prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of ['No Genre(s) Found'] for the genres prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of ['No Genre(s) Found'] for the genres prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "assigns a default prop of 'default' for the poster prop",
+      "fullTitle": "<MovieCard /> assigns a default prop of 'default' for the poster prop",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "uses the poster prop as a background image, rendering only the necessary HTML",
+      "fullTitle": "<CardFront /> uses the poster prop as a background image, rendering only the necessary HTML",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "correctly renders the title prop",
+      "fullTitle": "<CardBack /> correctly renders the title prop",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "correctly renders the genres prop as comma seperated strings",
+      "fullTitle": "<CardBack /> correctly renders the genres prop as comma seperated strings",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders 'No Rating Found' in an <h4> if the IMDBRating prop is null",
+      "fullTitle": "<CardBack /> renders 'No Rating Found' in an <h4> if the IMDBRating prop is null",
+      "duration": 20,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "renders an <img> tag if the IMDBRating prop is valid",
+      "fullTitle": "<CardBack /> renders an <img> tag if the IMDBRating prop is valid",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
